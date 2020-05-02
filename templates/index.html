@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Music Classification</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+<center>
+<h1>ML API for Music Classification  : BY PRIYANG BHATT</h1>
+<marquee><h1 align="center"> <font color="red">Music Classfication </font></h1></marquee>
+    
+<div>
+ <img src="static/images/music.jpg" class="w3-border w3-padding" alt="MUSIC FIGURE " style="width:60%;height:20%;border:0;">
+  </div>
+ <fieldset bordercolor="green">
+    <legend>MUSIC:</legend>	   
+ <div class="login">
+	
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <p>Enter Age:(between 5 and 100): <input type="number" name="age" min="5" max="100" required></p>
+<p>Enter Gender (1:Male 0:Female)<input type="number" name="gender" min="0" max="1" required></p>
+        
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+</fieldset>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+</center>
+</body>
+</html>
